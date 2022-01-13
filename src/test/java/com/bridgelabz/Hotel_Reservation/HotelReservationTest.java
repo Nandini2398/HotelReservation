@@ -1,12 +1,12 @@
 package com.bridgelabz.Hotel_Reservation;
 
-import org.junit.Assert;
 import java.time.LocalDate;
 import java.time.Month;
+import org.junit.Assert;
 import org.junit.Test;
 
-
 public class HotelReservationTest {
+	
 	@Test
 	public void givenHotelList_WhenAdded_shouldReturnProperHotelName(){
 		HotelReservationInterface hotelReservation = new HotelReservation();
@@ -14,6 +14,7 @@ public class HotelReservationTest {
 		String hotelName = hotelReservation.getHotelList().get(0).getHotelName();
 		Assert.assertEquals("Bridgewood", hotelName);
 	}
+	
 	@Test
 	public void givenHotelList_WhenAdded_shouldReturnProperHotelRating(){
 		HotelReservationInterface hotelReservation = new HotelReservation();
@@ -21,6 +22,7 @@ public class HotelReservationTest {
 		int hotelRating = hotelReservation.getHotelList().get(0).getRating();
 		Assert.assertEquals(4, hotelRating);
 	}
+	
 	@Test
 	public void givenHotelList_WhenAdded_shouldReturnWeekDayRate(){
 		HotelReservationInterface hotelReservation = new HotelReservation();
@@ -44,5 +46,16 @@ public class HotelReservationTest {
 		hotelReservation.addHotel("Ridgewood", 5, 220,150);
 		int hotelListSize = hotelReservation.getHotelListSize();
 		Assert.assertEquals(3, hotelListSize);
+	}
+	@Test
+	public void givenHotelDetails_shouldReturnCheapestHotel(){
+		
+		HotelReservation hotelReservation = new HotelReservation();
+		hotelReservation.addHotel("Lakewood", 3, 110, 90);
+		hotelReservation.addHotel("Bridgewood", 4, 160, 50);
+		LocalDate startDate = LocalDate.of(2021, Month.SEPTEMBER, 10);    
+		LocalDate endDate = LocalDate.of(2021, Month.SEPTEMBER, 12);    
+		String hotelName = hotelReservation.getCheapestHotel(startDate, endDate);
+		Assert.assertEquals("Lakewood", hotelName);
 	}
 }
