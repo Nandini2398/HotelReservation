@@ -7,10 +7,10 @@ public class Hotel {
 	private double CustomerCost;
 	public Hotel() {
 	}
-	public Hotel(String hotelName, int rating, double regularCustomerCost) {
+	public Hotel(String hotelName, int rating, double CustomerCost) {
 		this.hotelName = hotelName;
 		this.rating = rating;
-		this.CustomerCost = regularCustomerCost;
+		this.CustomerCost = CustomerCost;
 	}
 	public String getHotelName() {
 		return hotelName;
