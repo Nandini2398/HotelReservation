@@ -14,7 +14,6 @@ public class HotelReservationTest {
 		String hotelName = hotelReservation.getHotelList().get(0).getHotelName();
 		Assert.assertEquals("Bridgewood", hotelName);
 	}
-	
 	@Test
 	public void givenHotelList_WhenAdded_shouldReturnProperHotelRating(){
 		HotelReservationInterface hotelReservation = new HotelReservation();
@@ -22,7 +21,6 @@ public class HotelReservationTest {
 		int hotelRating = hotelReservation.getHotelList().get(0).getRating();
 		Assert.assertEquals(4, hotelRating);
 	}
-	
 	@Test
 	public void givenHotelList_WhenAdded_shouldReturnWeekDayRate(){
 		HotelReservationInterface hotelReservation = new HotelReservation();
